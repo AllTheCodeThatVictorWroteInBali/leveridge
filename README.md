@@ -1,6 +1,6 @@
 # Leveridge
 
-![Leveridge PDF upload and OCR example](./assets/example.png)
+![Leveridge PDF upload and OCR example](./assets/example_2.png)
 
 ## Run
 
