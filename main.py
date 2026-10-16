@@ -8,6 +8,7 @@ from time import perf_counter
 
 from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from db.pdf import PdfStore
 
@@ -30,6 +31,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="FastAPI Demo", lifespan=lifespan)
 INDEX_FILE = Path(__file__).with_name("index.html")
+app.mount("/static", StaticFiles(directory=INDEX_FILE.parent / "static"), name="static")
 
 
 @app.get("/index.html", response_class=FileResponse)
