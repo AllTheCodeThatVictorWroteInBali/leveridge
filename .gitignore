@@ -1,0 +1,10 @@
+.venv/
+.venv-python314-backup/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.db
+*.db-*
+.env
+.env.*
+!.env.example
