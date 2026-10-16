@@ -1,6 +1,6 @@
 # Leveridge
 
-![Leveridge PDF upload and OCR example](./assets/example_2.png)
+![Leveridge PDF upload and OCR example](./assets/example_3.png)
 
 ## Run
 
@@ -8,6 +8,8 @@
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+npm ci
+npm run build
 uvicorn main:app --reload
 ```
 
@@ -34,8 +36,11 @@ Cached weights are reused, but each server restart or auto-reload initializes th
 
 ## Endpoints
 
-The frontend uses React 19 browser modules with no Node.js or build step.
-An internet connection is required to load the pinned React modules from esm.sh.
+The frontend uses React 19 JSX components in `components/`, compiled with esbuild.
+Node.js and npm are required to install and build the frontend. React is bundled locally;
+the page no longer loads React from a CDN.
+After editing JSX, run `npm run build` and refresh the page, or run `npm run watch`
+in a separate terminal to rebuild automatically. Build the frontend before starting FastAPI.
 
 - `GET /index.html` serves the demo page.
 - `POST /read` accepts a multipart file field named `file` and returns the JSON list from `read_pdf`.

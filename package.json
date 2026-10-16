@@ -1,0 +1,16 @@
+{
+  "name": "leveridge",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild components/app.jsx --bundle --minify --format=esm --jsx=automatic --outfile=static/app.js",
+    "watch": "npm run build -- --watch"
+  },
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
